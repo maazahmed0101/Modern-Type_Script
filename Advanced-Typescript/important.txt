@@ -1,0 +1,157 @@
+/////______ npm init -y
+
+{npm init} kya karta hai?
+Tum se sawal poochta hai:
+project name kya hai?
+version kya hai?
+description?
+entry file?
+{npm init -y} kya karta hai?
+
+👉 Ye sab questions skip kar deta hai
+👉 Aur default settings ke sath package.json bana deta hai
+
+
+important {
+     👉 npm install -D ya npm install --save-dev
+     Ye kya karta hai?
+
+     👉 Ye development dependencies install karta hai
+     
+     Simple samjho:
+     
+     Project me 2 types packages hote hain:
+     
+     1. Normal dependencies
+     jo app run karne ke kaam aate hain
+     example: React, Express
+     
+     Install:
+     
+     npm install express
+     2. Dev dependencies (-D)
+     jo sirf development me use hote hain
+     production me zaroori nahi hote
+     
+     Example:
+     
+     nodemon (auto server restart)
+     eslint (code check)
+     webpack (build tool)
+     
+     Install:
+     
+     npm install nodemon -D
+     
+     ya
+     
+     npm install nodemon --save-dev
+
+     NOte{
+     YE SIRF DEVELOPMENT KE TIME PE USE HOGA PROJECT ME NAHE AYE GA Q KE AKHER ME HUM NE {-D} LEKHA HE JISS KA MATLAB HE KE YE DEV DEPENDENCIES ME AYEGA PROJECT ME USE NAHE HOGA 
+     }
+}
+🔥 npm vs npx (real difference)
+🟢 1. npm = install karne ke liye
+
+👉 npm ka kaam hota hai packages install karna
+
+Example:
+
+npm install typescript
+
+👉 Ye TypeScript ko tumhare project me install karega
+
+🟡 2. npx = run karne ke liye (without install)
+
+👉 npx ka kaam hota hai package ko direct chalana
+
+Example:
+
+npx tsc --init
+
+👉 Ye TypeScript compiler ko direct run karta hai aur tsconfig.json bana deta hai
+
+////_________
+
+
+npx tsc --init TypeScript ka command hai — aur is ka kaam hota hai TypeScript project setup karna.
+
+👉 Simple samjho:
+🔹 npx
+Ye kisi package ko install kiye baghair run karta hai
+Example:
+npx tsc
+🔹 tsc
+
+👉 TypeScript Compiler
+(jo .ts files ko .js me convert karta hai)
+
+🧠 Simple samajh:
+tsc = TypeScript compiler
+--init = config file banane ka option
+npx = is command ko run karta hai
+
+Result:
+tsconfig.json file create ho jati hai
+
+
+
+/////___________tsconfig.js
+
+is me ye bol raha he ke 
+// File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+==> ye lekha he or iss ka matlab ye he ke 
+
+Ye TypeScript ke tsconfig.json ki settings hain 👍 aur iska direct matlab folders ka structure set karna hota hai.
+
+🔹 "rootDir": "./src"
+
+👉 Iska matlab:
+Tumhara main TypeScript code kis folder me hoga
+
+📁 Example:
+project/
+ ├── src/
+ │    └── index.ts
+
+👉 Yahan:
+
+src = tumhara TypeScript code ka folder
+saari .ts files yahan hongi
+
+🔹 "outDir": "./dist"
+
+👉 Iska matlab:
+Compiled JavaScript files kahan banengi
+
+📁 Example:
+project/
+ ├── src/
+ │    └── index.ts
+ ├── dist/
+ │    └── index.js   (auto generate hota hai)
+
+👉 Jab tum run karte ho:
+
+npx tsc
+
+👉 TypeScript:
+
+.ts ko .js me convert karta hai
+aur dist folder me daal deta hai
+
+
+    ===> dist ka bata raha he ke
+    js ka ap ke pass distrabution ka code ayega yaha pe dist ke folder me 
+    {matlab]
+    me js ke jetne file bana o ga imeter ke through wo sab iss file me ayege 
+
+    note {
+    ap ko kahe or rakhne he kahe or rakhlo 
+    }
+
+    next 4:37 :51
