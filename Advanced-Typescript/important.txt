@@ -98,7 +98,8 @@ tsconfig.json file create ho jati hai
 
 
 /////___________tsconfig.js
-
+==> YE BATANA ZARORE HE KE KON KON SE PROJECT ME ME LEKH KAHA RAHA HO
+====> AUTPUT OR OUTPUT KE FILE ETC SAB KE BARE ME BARANA ZARORE HE OTHER WISE KAM KESE KAREFGA YE
 is me ye bol raha he ke 
 // File Layout
     "rootDir": "./src",
@@ -154,4 +155,176 @@ aur dist folder me daal deta hai
     ap ko kahe or rakhne he kahe or rakhlo 
     }
 
-    next 4:37 :51
+
+===>ts playgroung ko open karo waha pe apko batayega ke kya true kerna he or kya false
+
+, tsconfig.json se package.json ki cheezein change nahi hoti. Dono ka kaam alag hai.
+
+package.json
+
+Ye project ki settings aur npm ki information rakhta hai.
+
+Example:
+
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "typescript": "^5.9.0"
+  }
+}
+tsconfig.json
+
+Ye sirf TypeScript compiler ko batata hai ke code ko kaise compile karna hai.
+
+Example:
+
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
+Agar tumhara matlab ye hai:
+1. package.json ka "type": "module" badalna hai?
+
+To tsconfig.json se nahi hoga.
+
+Khud package.json me jaake change karna padega:
+
+"type": "module"
+
+ya
+
+"type": "commonjs"
+2. module aur target change karne hain?
+
+Ye tsconfig.json me hota hai:
+
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES2022"
+  }
+}
+
+ye ke sawak he iss ka jawab do
+note{
+    mera matlab he ke ager me ts playground jo website he us me me kuch  chezo ko true karo or kuch ko false so me us ko apne vs code me jo mera compilar etc he me chahta ho ke us ko convert karo sara ts playgroup me jo mene select keya he wese he selection code me ho jaye so ye kese hoga
+}
+
+IS KE ELAWA HUM JO RECOMENDED OPTIONS HE US KE SATH KHELTE REHTE HE 
+EXAMPLE{
+    JSX HE TO KESA HE ETC
+}
+YE RAHA RECOMENDED OPTION JO KE TS.CONFIG.JSON KE FILE ME HE 
+Important Note{
+    is ke sath ham khelte he ke ager RECOMENDED option me jsx me kya lekhna sahe he etc hum ese ts playground me setting dekhte he or manually yaha pe change kerte he
+}
+EXAMPLE {
+        // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  }
+}
+
+hun ne {npx tsc} ko serf run keya
+
+yo kuch to hua
+
+note important{
+    Don Bhai😡, npx tsc ka matlab samajhna bahut important hai.
+
+npx
+
+npx ka kaam hota hai project ke andar install package ko run karna bina globally install kiye.
+
+tsc
+
+tsc ka matlab hai TypeScript Compiler.
+
+Ye .ts (TypeScript) files ko .js (JavaScript) me convert karta hai.
+
+Jab tum likhte ho:
+npx tsc
+
+To ye ye kaam karta hai:
+
+Project me typescript package dhundta hai.
+tsconfig.json ko read karta hai (agar maujood ho).
+Usme jo settings hain unke mutabiq sari .ts files compile karta hai.
+Output .js files ko outDir (jaise dist) me daal deta hai.
+Example
+
+Agar file hai:
+
+// src/index.ts
+
+let name: string = "Maaz";
+console.log(name);
+
+Aur tsconfig.json me ye ho:
+
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
+
+Phir:
+
+npx tsc
+
+Run karne ke baad ye banega:
+
+Project/
+│
+├── src/
+│   └── index.ts
+│
+├── dist/
+│   └── index.js
+│
+└── tsconfig.json
+
+Aur dist/index.js me:
+
+"use strict";
+let name = "Maaz";
+console.log(name);
+}
+
+Note{
+    ager tum ek folder me ho or tum child folder ko target ker ke us ke file ko lena he to esa hoga
+  {  node dist/index.js}
+}
+
+important {
+    package.json me ye lekha he ==> 
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  Result ==> 
+
+    "scripts": {
+        {start => server oe jata he production me hata he apne so ab bhe api wahera le through system wagera ko run kerte ho}
+    "start": "node dist/indexy.js"
+    "dev": "echo \"Error: no test specified\" && exit 1"
+  },
+  is ko change karenge iss se
+
+}
+
+use time 41 minute
